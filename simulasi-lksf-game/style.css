@@ -1,0 +1,30 @@
+body {
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+/* - general
+game logo in main menu
+game logo as favicon
+instruction
+start game after input form
+DONE (except logo)
+
+- game
+python start in the middle
+python cannot move opposite direction
+use wasd
+python eat food to increase length
+4 pellets in the board, appear every 4 seconds and disappear likewise
+pellet cannot appear on python location
+player score based on python length
+timer and score param at the top
+player can rewind the game for 5 seconds
+if python hit wall, appear at the opposite side
+rewind button can be pressed or use spacebar
+python die if hit own tail
+no js console log or error */

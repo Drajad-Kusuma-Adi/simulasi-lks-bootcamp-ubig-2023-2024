@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pythons</title>
+    <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="anggaplahselesai.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container" id="mainMenu">
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            <img src="anggaplahselesai.png" class="rounded-circle my-5" alt="logo" width="250" height="250">
+            <div class="p-5 m-5 text-center" style="background-color: blue;">
+                <h1>Pythons</h1>
+                <form action="" class="form-group" id="startGame">
+                    <div class="m-3">
+                        <input class="form-control" type="text" name="name" id="name" placeholder="Enter your username...">
+                    </div>
+                    <input class="btn btn-primary w-100" type="submit" value="Play As">
+                </form>
+                <p>Current player: <span id="player"></span></p>
+                <br>
+                <button class="btn btn-warning w-100" id="startButton">Start Game</button>
+            </div>
+            <div class="p-5 m-5 text-start" style="background-color: blue;">
+                <h1>How to play</h1>
+                <ul>
+                    <li>You control the python with WASD keys</li>
+                    <li>Python will teleport to the opposite side if going through wall</li>
+                    <li>Python will die if crash its own tail</li>
+                    <li>There are max of 5 foods can appear on the map, each food with disappear after 5 seconds if you don't eat them, new food will appear every 3 seconds</li>
+                    <li>Your goal is getting as much foods as possible</li>
+                    <li>Good luck!</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex flex-column justify-content-center align-items-center" style="width: 100vw; height: 100vh;">
+        <div id="timer"></div>
+        <div id="score"></div>
+        <canvas class="hidden" id="board"></canvas>
+    </div>
+    <script src="./bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('startGame').addEventListener('submit', (event) => {
+            event.preventDefault();
+            let name = event.target.name.value;
+            localStorage.setItem('name', name);
+            window.location.reload();
+        })
+        if (localStorage.getItem('name')) {
+            document.getElementById('player').innerHTML = localStorage.getItem('name');
+        } else {
+            document.getElementById('player').innerHTML = 'No player yet';
+            document.getElementById('startButton').classList.add('disabled');
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
